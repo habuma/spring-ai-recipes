@@ -7,5 +7,5 @@ Medium (https://medium.com/@thetalkingapp).
 The recipes:
 
  - chatloop ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-building-a-text-based-chat-loop-around-chatclient-444573e4106c) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-lightweight-chat-loop-exploring-chatclient-walls-f31ic/))
-
-Yes, at the moment, there's only one recipe. But more will be added over time.
+ - chatclientcustomizer (article links TBD)
+ - logging-requests-and-responses (article links TBD)
