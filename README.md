@@ -10,3 +10,4 @@ The recipes:
  - chatclientcustomizer ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-composing-chatclient-behavior-5f643e727781) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-composing-chatclient-behavior-craig-walls-d5drc))
  - logging-requests-and-responses ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-logging-llm-requests-and-responses-c1adfba50082
 ) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-logging-llm-requests-responses-craig-walls-4v8dc))
+ - ask-user-question ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-asking-questions-to-the-user-99ec1a0e2394) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-letting-llm-ask-user-questions-craig-walls-rle4c))
