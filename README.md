@@ -15,3 +15,4 @@ The recipes:
  - skills ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-guiding-agent-behavior-with-skills-739d1b29f3c2) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-guiding-agent-behavior-skills-craig-walls-b8l0c))
  - skillsjars ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-reusing-agent-behavior-with-skillsjars-61636549fa79) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-plug-and-play-agent-behavior-skillsjars-craig-walls-du8gc))
  - a2a-server ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-enabling-agent-to-agent-communication-with-a2a-2cdd97794a6f) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-enabling-agent-to-agent-a2a-craig-walls-511oc))
+ - a2a-client ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-invoking-a2a-sub-agents-with-tasktool-e4f1a4b92b5f) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-invoking-a2a-sub-agents-tasktool-craig-walls-evvbc))
