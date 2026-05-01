@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: chatloop
+  main:
+    web-application-type: none
+  ai:
+    mcp:
+      client:
+#        stdio:
+#          root-change-notification: false
+#          connections:
+#            weathermcp:
+#              command: '/path/to/java'
+#              args:
+#                - '-jar'
+#                - '/path/to/stdio-mcp-server-0.0.1-SNAPSHOT.jar'
+        streamable-http:
+          connections:
+            weathermcp:
+              url: http://localhost:3001/mcp

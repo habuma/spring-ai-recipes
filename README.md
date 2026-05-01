@@ -18,3 +18,5 @@ The recipes:
  - a2a-client ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-invoking-a2a-sub-agents-with-tasktool-e4f1a4b92b5f) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-invoking-a2a-sub-agents-tasktool-craig-walls-evvbc))
  - longterm-memory ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-enabling-long-term-memory-49186aa60cb0) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-enabling-long-term-memory-craig-walls-ehwsc))
  - stdio-mcp-server ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-creating-an-stdio-mcp-server-ccacce8c5349) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-creating-stdio-mcp-server-craig-walls-pwazc))
+ - streaming-http-mcp-server ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-streamable-http-mcp-server-e9c70590b872) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-streamable-http-mcp-server-craig-walls-a4euc))
+ - mcp-client ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-creating-an-mcp-client-9691ddc42dfd) | LinkedIn - TBD)
