@@ -11,7 +11,7 @@ The recipes:
  - logging-requests-and-responses ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-logging-llm-requests-and-responses-c1adfba50082
 ) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-logging-llm-requests-responses-craig-walls-4v8dc))
  - ask-user-question ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-asking-questions-to-the-user-99ec1a0e2394) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-letting-llm-ask-user-questions-craig-walls-rle4c))
- - todo-write-tool ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-agentic-planning-with-todowritetool-5c415ef5a816) | LinkedIn(https://www.linkedin.com/pulse/spring-ai-recipe-agentic-planning-todowritetool-craig-walls-pcigc))
+ - todo-write-tool ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-agentic-planning-with-todowritetool-5c415ef5a816) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-agentic-planning-todowritetool-craig-walls-pcigc))
  - skills ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-guiding-agent-behavior-with-skills-739d1b29f3c2) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-guiding-agent-behavior-skills-craig-walls-b8l0c))
  - skillsjars ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-reusing-agent-behavior-with-skillsjars-61636549fa79) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-plug-and-play-agent-behavior-skillsjars-craig-walls-du8gc))
  - a2a-server ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-enabling-agent-to-agent-communication-with-a2a-2cdd97794a6f) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-enabling-agent-to-agent-a2a-craig-walls-511oc))
@@ -21,3 +21,4 @@ The recipes:
  - streaming-http-mcp-server ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-streamable-http-mcp-server-e9c70590b872) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-streamable-http-mcp-server-craig-walls-a4euc))
  - mcp-client ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-creating-an-mcp-client-9691ddc42dfd) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-creating-mcp-client-craig-walls-dm6gc))
  - graph-workflow ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-building-a-graph-based-agentic-workflow-becfae64170a))
+ - graph-workflow-hitl ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-adding-human-in-the-loop-to-a-graph-based-agentic-workflow-4a826cf89902))
