@@ -1,24 +1,5 @@
 # Spring AI Recipes
 
 This repository will hold the code for the examples presented in Spring AI
-Recipes that I post on LinkedIn (https://www.linkedin.com/in/habuma/) and
-Medium (https://medium.com/@thetalkingapp).
-
-The recipes:
-
- - chatloop ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-building-a-text-based-chat-loop-around-chatclient-444573e4106c) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-lightweight-chat-loop-exploring-chatclient-walls-f31ic/))
- - chatclientcustomizer ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-composing-chatclient-behavior-5f643e727781) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-composing-chatclient-behavior-craig-walls-d5drc))
- - logging-requests-and-responses ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-logging-llm-requests-and-responses-c1adfba50082
-) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-logging-llm-requests-responses-craig-walls-4v8dc))
- - ask-user-question ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-asking-questions-to-the-user-99ec1a0e2394) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-letting-llm-ask-user-questions-craig-walls-rle4c))
- - todo-write-tool ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-agentic-planning-with-todowritetool-5c415ef5a816) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-agentic-planning-todowritetool-craig-walls-pcigc))
- - skills ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-guiding-agent-behavior-with-skills-739d1b29f3c2) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-guiding-agent-behavior-skills-craig-walls-b8l0c))
- - skillsjars ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-reusing-agent-behavior-with-skillsjars-61636549fa79) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-plug-and-play-agent-behavior-skillsjars-craig-walls-du8gc))
- - a2a-server ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-enabling-agent-to-agent-communication-with-a2a-2cdd97794a6f) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-enabling-agent-to-agent-a2a-craig-walls-511oc))
- - a2a-client ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-invoking-a2a-sub-agents-with-tasktool-e4f1a4b92b5f) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-invoking-a2a-sub-agents-tasktool-craig-walls-evvbc))
- - longterm-memory ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-enabling-long-term-memory-49186aa60cb0) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-enabling-long-term-memory-craig-walls-ehwsc))
- - stdio-mcp-server ([Medium](https://thetalkingapp.medium.com/spring-ai-recipe-creating-an-stdio-mcp-server-ccacce8c5349) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-creating-stdio-mcp-server-craig-walls-pwazc))
- - streaming-http-mcp-server ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-streamable-http-mcp-server-e9c70590b872) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-streamable-http-mcp-server-craig-walls-a4euc))
- - mcp-client ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-creating-an-mcp-client-9691ddc42dfd) | [LinkedIn](https://www.linkedin.com/pulse/spring-ai-recipe-creating-mcp-client-craig-walls-dm6gc))
- - graph-workflow ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-building-a-graph-based-agentic-workflow-becfae64170a))
- - graph-workflow-hitl ([Medium](https://medium.com/@thetalkingapp/spring-ai-recipe-adding-human-in-the-loop-to-a-graph-based-agentic-workflow-4a826cf89902))
+Recipes that I post periodically. Find all Spring AI Recipes published so far at
+https://www.habuma.com/springairecipes/.
