@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: chatloop
+  main:
+    web-application-type: none
+  ai:
+    mcp:
+      client:
+        streamable-http:
+          connections:
+            weathermcp:
+              url: http://localhost:3000/mcp
