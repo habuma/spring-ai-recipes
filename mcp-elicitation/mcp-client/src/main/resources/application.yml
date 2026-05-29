@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: chatloop
+  main:
+    web-application-type: none
+  ai:
+    mcp:
+      client:
+        streamable-http:
+          connections:
+            product-agent:
+              url: http://localhost:3000/mcp
+        request-timeout: 60s
