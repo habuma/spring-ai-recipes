@@ -45,14 +45,14 @@ public class ChatClientConfig {
     };
   }
 
-  @Bean
-  ChatClientCustomizer addToolCallAdvisor() {
-    return builder ->
-        builder.defaultAdvisors(
-            ToolCallAdvisor.builder()
-                .advisorOrder(BaseAdvisor.HIGHEST_PRECEDENCE + 300)
-                .disableInternalConversationHistory()
-                .build());
-  }
+//  @Bean
+//  ChatClientCustomizer addToolCallAdvisor() {
+//    return builder ->
+//        builder.defaultAdvisors(
+//            ToolCallAdvisor.builder()
+//                .advisorOrder(BaseAdvisor.HIGHEST_PRECEDENCE + 300)
+//                .disableInternalConversationHistory()
+//                .build());
+//  }
 
 }
