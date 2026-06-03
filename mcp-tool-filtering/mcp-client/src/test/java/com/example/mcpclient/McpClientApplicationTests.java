@@ -1,0 +1,15 @@
+package com.example.mcpclient;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+@Disabled
+class McpClientApplicationTests {
+
+  @Test
+  void contextLoads() {
+  }
+
+}
