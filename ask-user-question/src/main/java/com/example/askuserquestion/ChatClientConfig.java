@@ -3,7 +3,7 @@ package com.example.askuserquestion;
 import org.springaicommunity.agent.tools.AskUserQuestionTool;
 import org.springaicommunity.agent.utils.CommandLineQuestionHandler;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
@@ -21,7 +21,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -33,12 +33,12 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer defaultTools(WeatherTools tools) {
+  ChatClientBuilderCustomizer defaultTools(WeatherTools tools) {
     return builder -> builder.defaultTools(tools);
   }
 
   @Bean
-  ChatClientCustomizer chatClientCustomizer() {
+  ChatClientBuilderCustomizer ChatClientBuilderCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           SimpleLoggerAdvisor.builder()
@@ -47,7 +47,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer askUserQuestionTool() {
+  ChatClientBuilderCustomizer askUserQuestionTool() {
     return builder -> builder
         .defaultTools(AskUserQuestionTool.builder()
             .questionHandler(new CommandLineQuestionHandler())

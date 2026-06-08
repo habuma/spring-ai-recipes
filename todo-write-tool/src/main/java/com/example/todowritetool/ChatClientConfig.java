@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springaicommunity.agent.tools.TodoWriteTool;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.ToolCallAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
@@ -27,7 +27,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer messageChatAdviser() {
+  ChatClientBuilderCustomizer messageChatAdviser() {
     return builder ->
         builder.defaultAdvisors(
             ToolCallAdvisor.builder()
@@ -39,7 +39,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer todoWriteTool() {
+  ChatClientBuilderCustomizer todoWriteTool() {
     return builder -> builder
         .defaultTools(
             TodoWriteTool.builder()

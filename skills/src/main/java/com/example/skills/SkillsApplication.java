@@ -1,6 +1,7 @@
 package com.example.skills;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,7 +24,9 @@ public class SkillsApplication {
         while (true) {
           System.out.print("> ");
           System.out.println("\n - " +
-              chatClient.prompt(scanner.nextLine()).call().content());
+            chatClient.prompt(scanner.nextLine())
+                     .advisors(spec -> spec.param(ChatMemory.CONVERSATION_ID, "DEMO"))
+                     .call().content());
         }
       }
     };

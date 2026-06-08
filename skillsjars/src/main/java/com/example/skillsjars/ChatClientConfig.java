@@ -4,7 +4,7 @@ import org.springaicommunity.agent.tools.FileSystemTools;
 import org.springaicommunity.agent.tools.ShellTools;
 import org.springaicommunity.agent.tools.SkillsTool;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +23,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -38,16 +38,16 @@ public class ChatClientConfig {
   List<Resource> skillPaths;
 
   @Bean
-  ChatClientCustomizer skillsTools() {
+  ChatClientBuilderCustomizer skillsTools() {
     return builder -> builder
-        .defaultToolCallbacks(
+        .defaultTools(
             SkillsTool.builder()
                 .addSkillsResources(skillPaths)
                 .build());
   }
 
   @Bean
-  ChatClientCustomizer addFileSystemAndShellTools() {
+  ChatClientBuilderCustomizer addFileSystemAndShellTools() {
     return builder -> builder
         .defaultTools(
             ShellTools.builder().build(),

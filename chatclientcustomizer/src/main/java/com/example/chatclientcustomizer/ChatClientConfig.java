@@ -1,7 +1,7 @@
 package com.example.chatclientcustomizer;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -17,7 +17,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -30,13 +30,13 @@ public class ChatClientConfig {
 
   @Bean
   @ConditionalOnProperty("chatclient.tools.weather.enabled")
-  ChatClientCustomizer defaultTools(WeatherTools tools) {
-    return buidler -> buidler.defaultTools(tools);
+  ChatClientBuilderCustomizer defaultTools(WeatherTools tools) {
+    return builder -> builder.defaultTools(tools);
   }
 
   @Bean
   @ConditionalOnProperty("chatclient.pirate.enabled")
-  ChatClientCustomizer pirateTalk() {
+  ChatClientBuilderCustomizer pirateTalk() {
     return builder -> builder.defaultSystem("Talk like a pirate");
   }
 

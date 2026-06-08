@@ -1,7 +1,7 @@
 package com.example.a2aserver;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,7 +14,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer addWeatherTools(WeatherTools weatherTools) {
+  ChatClientBuilderCustomizer addWeatherTools(WeatherTools weatherTools) {
     return builder -> builder.defaultTools(weatherTools);
   }
 

@@ -1,12 +1,16 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.0.5'
+    id 'org.springframework.boot' version '4.0.6'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 description = 'a2a-server'
+
+tasks.named('bootRun') {
+    standardInput = System.in
+}
 
 java {
     toolchain {
@@ -19,13 +23,14 @@ repositories {
 }
 
 ext {
-    set('springAiVersion', "2.0.0-M4")
+    set('springAiVersion', "2.0.0-RC1")
+    set('springAiA2AVersion', "0.3.0")
 }
 
 dependencies {
-    implementation 'org.springframework.ai:spring-ai-starter-model-openai-sdk'
+    implementation 'org.springframework.ai:spring-ai-starter-model-openai'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-    implementation 'org.springaicommunity:spring-ai-a2a-server-autoconfigure:0.2.0'
+    implementation "org.springaicommunity:spring-ai-a2a-server-autoconfigure:$springAiA2AVersion"
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }

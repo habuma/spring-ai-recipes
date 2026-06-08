@@ -4,7 +4,7 @@ import org.springaicommunity.agent.tools.FileSystemTools;
 import org.springaicommunity.agent.tools.ShellTools;
 import org.springaicommunity.agent.tools.SkillsTool;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,17 +24,17 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer addSkills() {
+  ChatClientBuilderCustomizer addSkills() {
     return builder -> builder
         .defaultSystem("IMPORTANT: Always use the available skills to " +
                 "assist the user in their requests. When available follow " +
                 "skills instructions exactly.")
-        .defaultToolCallbacks(SkillsTool.builder()
+        .defaultTools(SkillsTool.builder()
                 .addSkillsResources(skillResources).build());
   }
 
   @Bean
-  ChatClientCustomizer addTools(WeatherTools weatherTools) {
+  ChatClientBuilderCustomizer addTools(WeatherTools weatherTools) {
     return builder -> builder
         .defaultTools(weatherTools);
   }

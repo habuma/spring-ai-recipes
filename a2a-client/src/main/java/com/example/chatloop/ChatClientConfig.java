@@ -7,7 +7,7 @@ import org.springaicommunity.agent.subagent.a2a.A2ASubagentExecutor;
 import org.springaicommunity.agent.subagent.a2a.A2ASubagentResolver;
 import org.springaicommunity.agent.tools.task.TaskTool;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +22,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -34,7 +34,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer addTaskTool() {
+  ChatClientBuilderCustomizer addTaskTool() {
     return builder -> {
       var taskTool = TaskTool.builder()
           .subagentReferences(
@@ -45,7 +45,7 @@ public class ChatClientConfig {
               new SubagentType(
                   new A2ASubagentResolver(), new A2ASubagentExecutor()))
           .build();
-      builder.defaultToolCallbacks(taskTool);
+      builder.defaultTools(taskTool);
     };
   }
 
