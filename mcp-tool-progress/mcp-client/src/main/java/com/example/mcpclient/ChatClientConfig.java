@@ -1,7 +1,7 @@
 package com.example.mcpclient;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.tool.ToolCallbackProvider;
@@ -19,7 +19,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -31,9 +31,9 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer addMcpTools(ToolCallbackProvider mcpToolCallbacks) {
+  ChatClientBuilderCustomizer addMcpTools(ToolCallbackProvider mcpToolCallbacks) {
     return builder ->
-        builder.defaultToolCallbacks(mcpToolCallbacks);
+        builder.defaultTools(mcpToolCallbacks);
   }
 
 }

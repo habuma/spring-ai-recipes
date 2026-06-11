@@ -2,7 +2,7 @@ package com.example.longtermmemory;
 
 import org.springaicommunity.agent.advisors.AutoMemoryToolsAdvisor;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -30,7 +30,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer longTermMemoryCustomizer(
+  ChatClientBuilderCustomizer longTermMemoryCustomizer(
       @Value("${agent.memories.dir}") String rootMemoriesDirectory) {
     return builder -> {
       builder.defaultAdvisors(AutoMemoryToolsAdvisor.builder()

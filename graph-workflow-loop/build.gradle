@@ -1,13 +1,12 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.0.5'
+    id 'org.springframework.boot' version '4.0.6'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 description = 'graph-workflow-loop'
-
 
 tasks.named('bootRun') {
     standardInput = System.in
@@ -25,8 +24,8 @@ repositories {
 }
 
 ext {
-    set('springAiVersion', "2.0.0-M5")
-    set('springAiAlibabaVersion', '1.1.2.2')
+    set('springAiVersion', "2.0.0-RC2")
+    set('springAiAlibabaVersion', '1.1.2.3')
 }
 
 dependencies {

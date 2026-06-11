@@ -3,7 +3,7 @@ package com.example.toolchoiceexplanation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.tool.augment.AugmentedToolCallbackProvider;
@@ -21,7 +21,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -33,7 +33,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer addToolExplanation(Toolbox tools) {
+  ChatClientBuilderCustomizer addToolExplanation(Toolbox tools) {
     return builder -> {
       var provider =
           AugmentedToolCallbackProvider.<ToolChoiceExplanation>builder()
@@ -47,7 +47,7 @@ public class ChatClientConfig {
                 logger.debug("MemoryNotes : {}", thinking.memoryNotes());
               })
               .build();
-      builder.defaultToolCallbacks(provider);
+      builder.defaultTools(provider);
     };
   }
 

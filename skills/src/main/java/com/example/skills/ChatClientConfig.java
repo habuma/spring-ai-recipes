@@ -1,7 +1,5 @@
 package com.example.skills;
 
-import org.springaicommunity.agent.tools.FileSystemTools;
-import org.springaicommunity.agent.tools.ShellTools;
 import org.springaicommunity.agent.tools.SkillsTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;

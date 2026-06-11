@@ -2,7 +2,7 @@ package com.example.semanticcaching;
 
 import org.springframework.ai.chat.cache.semantic.SemanticCacheAdvisor;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +17,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -29,7 +29,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer addSemanticCacheAdvisor(
+  ChatClientBuilderCustomizer addSemanticCacheAdvisor(
           SemanticCacheAdvisor semanticCacheAdvisor) {
     return builder ->
         builder.defaultAdvisors(semanticCacheAdvisor);

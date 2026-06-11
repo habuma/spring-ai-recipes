@@ -1,7 +1,7 @@
 package com.example.logging;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.ChatClientCustomizer;
+import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.client.advisor.ToolCallAdvisor;
@@ -20,7 +20,7 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer chatMemoryCustomizer() {
+  ChatClientBuilderCustomizer chatMemoryCustomizer() {
     return builder -> {
       builder.defaultAdvisors(
           MessageChatMemoryAdvisor.builder(
@@ -32,12 +32,12 @@ public class ChatClientConfig {
   }
 
   @Bean
-  ChatClientCustomizer defaultTools(WeatherTools tools) {
+  ChatClientBuilderCustomizer defaultTools(WeatherTools tools) {
     return builder -> builder.defaultTools(tools);
   }
 
   @Bean
-  ChatClientCustomizer addSimpleLoggerAdvisor() {
+  ChatClientBuilderCustomizer addSimpleLoggerAdvisor() {
     return builder -> {
       builder.defaultAdvisors(
           SimpleLoggerAdvisor.builder()
@@ -45,8 +45,10 @@ public class ChatClientConfig {
     };
   }
 
+// No longer needs to be explicitly configured. It is the default as of
+// Spring AI 2.0.0-M7
 //  @Bean
-//  ChatClientCustomizer addToolCallAdvisor() {
+//  ChatClientBuilderCustomizer addToolCallAdvisor() {
 //    return builder ->
 //        builder.defaultAdvisors(
 //            ToolCallAdvisor.builder()

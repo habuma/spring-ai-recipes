@@ -1,0 +1,6 @@
+The recipe for which this code exists is no longer necessary. As of Spring AI
+2.0.0-M7, `ToolCallAdvisor` is used by default and no longer needs to be
+explicitly configured.
+
+This code (and the recipe it is associated with) will remain for historical
+purposes.

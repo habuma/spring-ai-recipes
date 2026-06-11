@@ -6,7 +6,9 @@ import org.springaicommunity.agent.tools.TodoWriteTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.client.advisor.ToolCallAdvisor;
+import org.springframework.ai.chat.client.advisor.ToolCallingAdvisor;
 import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -30,9 +32,6 @@ public class ChatClientConfig {
   ChatClientBuilderCustomizer messageChatAdviser() {
     return builder ->
         builder.defaultAdvisors(
-            ToolCallAdvisor.builder()
-                .conversationHistoryEnabled(false)
-                .build(),
             MessageChatMemoryAdvisor.builder(
                     MessageWindowChatMemory.builder().build())
                 .build());
