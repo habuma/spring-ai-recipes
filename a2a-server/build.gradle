@@ -23,7 +23,7 @@ repositories {
 }
 
 ext {
-    set('springAiVersion', "2.0.0-RC2")
+    set('springAiVersion', "2.0.0")
     set('springAiA2AVersion', "0.3.0")
 }
 
