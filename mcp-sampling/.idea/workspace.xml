@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5684e574-b197-49aa-8623-740e49b16e54" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../a2a-client/src/main/java/com/example/chatloop/ChatloopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2a-client/src/main/java/com/example/chatloop/ChatloopApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2a-client/src/test/java/com/example/chatloop/ChatloopApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2a-client/src/test/java/com/example/chatloop/ChatloopApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ask-user-question/src/main/java/com/example/askuserquestion/AskUserQuestionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ask-user-question/src/main/java/com/example/askuserquestion/AskUserQuestionApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ask-user-question/src/test/java/com/example/askuserquestion/AskUserQuestionApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ask-user-question/src/test/java/com/example/askuserquestion/AskUserQuestionApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chatclientcustomizer/src/main/java/com/example/chatclientcustomizer/ChatClientCustomizerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chatclientcustomizer/src/main/java/com/example/chatclientcustomizer/ChatClientCustomizerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chatclientcustomizer/src/test/java/com/example/chatclientcustomizer/ChatClientCustomizerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chatclientcustomizer/src/test/java/com/example/chatclientcustomizer/ChatClientCustomizerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chatloop/src/main/java/com/example/chatloop/ChatloopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chatloop/src/main/java/com/example/chatloop/ChatloopApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chatloop/src/test/java/com/example/chatloop/ChatloopApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../chatloop/src/test/java/com/example/chatloop/ChatloopApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../essential-rag/src/main/java/com/example/essentialrag/EssentialRagApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../essential-rag/src/main/java/com/example/essentialrag/EssentialRagApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../essential-rag/src/test/java/com/example/essentialrag/EssentialRagApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../essential-rag/src/test/java/com/example/essentialrag/EssentialRagApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graph-workflow-hitl/src/test/java/com/example/graphworkflowhitl/GraphWorkflowHitlApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../graph-workflow-hitl/src/test/java/com/example/graphworkflowhitl/GraphWorkflowHitlApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graph-workflow-loop/src/test/java/com/example/graphworkflowloop/GraphWorkflowLoopApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../graph-workflow-loop/src/test/java/com/example/graphworkflowloop/GraphWorkflowLoopApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graph-workflow/src/main/java/com/example/graphworkflow/GraphWorkflowApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../graph-workflow/src/main/java/com/example/graphworkflow/GraphWorkflowApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../graph-workflow/src/test/java/com/example/graphworkflow/GraphWorkflowApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../graph-workflow/src/test/java/com/example/graphworkflow/GraphWorkflowApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logging-requests-and-responses/src/main/java/com/example/logging/LoggingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../logging-requests-and-responses/src/main/java/com/example/logging/LoggingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logging-requests-and-responses/src/test/java/com/example/logging/LoggingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../logging-requests-and-responses/src/test/java/com/example/logging/LoggingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../longterm-memory/src/main/java/com/example/longtermmemory/LongTermMemoryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../longterm-memory/src/main/java/com/example/longtermmemory/LongTermMemoryApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../longterm-memory/src/test/java/com/example/longtermmemory/LongTermMemoryApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../longterm-memory/src/test/java/com/example/longtermmemory/LongTermMemoryApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-elicitation/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-elicitation/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-elicitation/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-elicitation/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-logging/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-logging/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-logging/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-logging/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-tool-filtering/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-tool-filtering/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-tool-filtering/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-tool-filtering/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-tool-progress/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-tool-progress/mcp-client/src/main/java/com/example/mcpclient/McpClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mcp-tool-progress/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mcp-tool-progress/mcp-client/src/test/java/com/example/mcpclient/McpClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semantic-caching-anyvs/src/main/java/com/example/semanticcaching/SemanticCachingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../semantic-caching-anyvs/src/main/java/com/example/semanticcaching/SemanticCachingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semantic-caching-anyvs/src/test/java/com/example/semanticcaching/SemanticCachingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../semantic-caching-anyvs/src/test/java/com/example/semanticcaching/SemanticCachingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semantic-caching/src/main/java/com/example/semanticcaching/SemanticCachingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../semantic-caching/src/main/java/com/example/semanticcaching/SemanticCachingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../semantic-caching/src/test/java/com/example/semanticcaching/SemanticCachingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../semantic-caching/src/test/java/com/example/semanticcaching/SemanticCachingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skills/src/main/java/com/example/skills/SkillsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../skills/src/main/java/com/example/skills/SkillsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skillsjars/src/main/java/com/example/skillsjars/SkillsjarsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../skillsjars/src/main/java/com/example/skillsjars/SkillsjarsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo-write-tool/src/main/java/com/example/todowritetool/SpringAiTodoWriteToolApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../todo-write-tool/src/main/java/com/example/todowritetool/SpringAiTodoWriteToolApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-call-advisor-logging/src/main/java/com/example/logging/LoggingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-call-advisor-logging/src/main/java/com/example/logging/LoggingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-call-advisor-logging/src/test/java/com/example/logging/LoggingApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-call-advisor-logging/src/test/java/com/example/logging/LoggingApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-choice-explanation/src/main/java/com/example/toolchoiceexplanation/ToolChoiceExplanationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-choice-explanation/src/main/java/com/example/toolchoiceexplanation/ToolChoiceExplanationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tool-choice-explanation/src/test/java/com/example/toolchoiceexplanation/ToolChoiceExplanationApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../tool-choice-explanation/src/test/java/com/example/toolchoiceexplanation/ToolChoiceExplanationApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="3F00BkM0x1JyuELPTXvKbhX3TMo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/habuma/Projects/spring-ai-recipes/mcp-sampling",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28539.33" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28539.33" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5684e574-b197-49aa-8623-740e49b16e54" name="Changes" comment="" />
+      <created>1731990615634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731990615634</updated>
+      <workItem from="1731990616774" duration="472000" />
+      <workItem from="1743042909067" duration="328000" />
+      <workItem from="1744414675006" duration="437000" />
+      <workItem from="1752592380279" duration="733000" />
+      <workItem from="1758169766338" duration="921000" />
+      <workItem from="1781196546397" duration="2000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
