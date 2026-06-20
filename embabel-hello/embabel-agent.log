@@ -1,0 +1,21 @@
+1781884517973:agents
+1781884964551:help
+1781884973589:x "Say hello to Craig"
+1781885012577:help
+1781885035710:x "Say hello to Bob"
+1781885053855:x "Someone is named Craig. Say hello to them."
+1781885086011:x "The person's name is Craig. Say hello to them."
+1781885128600:x "say hello to Craig"
+1781885174981:x "Say hello to Craig"
+1781885222711:x "Greet Craig"
+1781885412507:Say hello to Craig
+1781885418643:x "Say hello to Craig"
+1781885967140:agents
+1781885969266:goals
+1781885987837:help
+1781886004817:blackboard
+1781886021086:actions
+1781886045628:agents
+1781886048036:goals
+1781886081721:help
+1781886169927:execute "Say hello to Bob"
