@@ -1,0 +1,59 @@
+1781884517973:agents
+1781884964551:help
+1781884973589:x "Say hello to Craig"
+1781885012577:help
+1781885035710:x "Say hello to Bob"
+1781885053855:x "Someone is named Craig. Say hello to them."
+1781885086011:x "The person's name is Craig. Say hello to them."
+1781885128600:x "say hello to Craig"
+1781885174981:x "Say hello to Craig"
+1781885222711:x "Greet Craig"
+1781885412507:Say hello to Craig
+1781885418643:x "Say hello to Craig"
+1781885967140:agents
+1781885969266:goals
+1781885987837:help
+1781886004817:blackboard
+1781886021086:actions
+1781886045628:agents
+1781886048036:goals
+1781886081721:help
+1781886169927:execute "Say hello to Bob"
+1781976242142:agents
+1781976255801:x "I was overcharged $15"
+1781976275059:x "I need to open a support ticket. My account was overcharged $15"
+1781976331390:x "Say hello to Rod"
+1781976340637:chat
+1781976478701:I was overcharged $10
+1781976486662:x "I was overcharged $15"
+1781976517092:x "I need to open a support ticket. I was overcharged $15"
+1781976607952:x "I was overcharged $15"
+1781976642028:x "The sky is purple today"
+1781976660496:x "I need help from support. The sky is purple today."
+1781976984518:chat
+1781977060587:x "My monitor won't turn on"
+1781977111930:x "I need support help: The sky is purple"
+1781977260791:x "I need support help: The sky is purple."
+1781977297955:x "I need support help: My dog smells like cheese."
+1781978418721:x "I was overcharged $50"
+1781979756052:x "I need support. My dog is ugly"
+1781980184664:x "I need support: My dog is ugly"
+1781984560409:x "I was overcharged $50"
+1781984702641:x "My monitor won't turn on"
+1781984777459:x "I need support: My dog is ugly"
+1782395336865:x "My monitor won't turn on"
+1782395371281:x "I was overcharged $50"
+1782395391471:x "I need support: My dog is ugly"
+1782399008655:x "I need support: My dog is sneezing"
+1782408844243:x "I need support: My dog smells"
+1782408937013:x "I need support: My dog smells funny"
+1782419579358:x "I was overcharged $50"
+1782419597999:x "My monitor won't turn on"
+1782419613147:x "I need support: My dog is smelly"
+1782419715812:x "My monitor won't turn on"
+1782419804584:x "I was overcharged $50"
+1782419854358:x "My monitor won't turn on"
+1782419871114:x "I need support: My dog is ugly"
+1782449603601:x "I was overcharted $50"
+1782449618036:x "My monitor won't turn on"
+1782449631937:x "I need support: My dog is ugly"
