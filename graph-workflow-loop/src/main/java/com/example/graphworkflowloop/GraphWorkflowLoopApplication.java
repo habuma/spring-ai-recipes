@@ -20,8 +20,12 @@ public class GraphWorkflowLoopApplication {
   }
 
   @Bean
-  ApplicationRunner go(CompiledGraph compiledGraph) {
+  ApplicationRunner go(CompiledGraph compiledGraph, DiagramBuilder diagramBuilder) {
     return args -> {
+
+      diagramBuilder.createMermaidDiagram(compiledGraph);
+      diagramBuilder.createPlantUMLDiagram(compiledGraph);
+
       System.out.println("How can I help?\n");
       try (Scanner scanner = new Scanner(System.in)) {
         while (true) {
