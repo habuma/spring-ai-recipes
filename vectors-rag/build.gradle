@@ -2,18 +2,15 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '4.1.0'
     id 'io.spring.dependency-management' version '1.1.7'
-    id 'application'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 description = 'vectors-rag'
 
-
 tasks.named('bootRun') {
     standardInput = System.in
 }
-
 
 java {
     toolchain {
@@ -33,7 +30,7 @@ dependencies {
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
-    implementation 'com.integrallis:vectors-spring-ai:0.1.1'
+    implementation 'com.integrallis:vectors-spring-boot-starter:0.1.4'
 
     implementation 'org.springframework.ai:spring-ai-vector-store-advisor'
     implementation 'org.springframework.ai:spring-ai-tika-document-reader'
@@ -48,11 +45,8 @@ dependencyManagement {
     }
 }
 
-application {
-    applicationDefaultJvmArgs = [
-            '--add-modules',
-            'jdk.incubator.vector'
-    ]
+tasks.named('bootRun') {
+    jvmArgs('--add-modules', 'jdk.incubator.vector')
 }
 
 tasks.named('test') {
