@@ -1,0 +1,14 @@
+On their turn, a player starts by moving any flies on the board
+to the same space as an adjacent frog (effectively the frog has
+eaten that fly). Then the player can either place 1 fly adjacent
+to a frog on the board as a distraction so that the frog won't
+jump or they may place a frog of their player color onto any
+empty space. If the frog is adjacent to another frog (even if it
+is their own), the adjacent frog will jump two space in any
+direction away from the frog that was just placed. The direction
+of the jump is decided by the current player. If the frog jumps
+off the board, then that frog is out of play.
+
+The game ends when all players have placed all of their frogs
+(not counting frogs that have jumped off the board). The player
+with the most frogs remaining on the board wins.

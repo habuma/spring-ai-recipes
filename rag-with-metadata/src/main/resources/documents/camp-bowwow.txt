@@ -1,0 +1,6 @@
+On each player's turn, they place a dog, food bowl, or toy into
+one of the three play yards. The game ends when a player has
+placed their last dog into a yard. Then each player who hasn't
+played in that round gets to place one more item into a yard
+until the last player so that all players have an equal number
+of turns.

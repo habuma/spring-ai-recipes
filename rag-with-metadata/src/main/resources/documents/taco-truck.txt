@@ -1,0 +1,7 @@
+When it is a player's turn, they will draw a card from the
+ingredients deck and add it to their hand. Then they may play
+any ingredient card from their hand to add that ingredient to
+one of up to three tacos in progress. Or, if they have a crunch
+card in their hand, then they may play it to remove one
+ingredient from any one opponent's taco. The first player to
+completely build 3 tacos wins.
