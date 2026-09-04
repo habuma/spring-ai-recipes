@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.1.0'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'local-llms-modeljars'
+
+
+tasks.named('bootRun') {
+    standardInput = System.in
+}
+
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springAiVersion', "2.0.0")
+}
+
+dependencies {
+    // Essential Spring AI dependencies needed
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.ai:spring-ai-client-chat'
+    implementation 'org.springframework.ai:spring-ai-model'
+
+    // Models/ModelJars dependencies
+    implementation("org.modeljars:modeljars:0.1.31")
+    implementation("com.integrallis:models-spring-ai:0.3.26")
+    implementation('org.modeljars.huggingface:qwen.qwen3-1.7b-gguf.q8_0:3.0.0-q8_0.2')
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
+    }
+}
+
+tasks.named('bootRun') {
+    jvmArgs('--add-modules', 'jdk.incubator.vector')
+}
+
+tasks.named('test') {
+    jvmArgs('--add-modules', 'jdk.incubator.vector')
+    useJUnitPlatform()
+}
