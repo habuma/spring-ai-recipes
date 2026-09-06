@@ -32,7 +32,6 @@ dependencies {
     // Essential Spring AI dependencies needed
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.ai:spring-ai-client-chat'
-    implementation 'org.springframework.ai:spring-ai-model'
 
     // Models/ModelJars dependencies
     implementation("org.modeljars:modeljars:0.1.31")
@@ -50,6 +49,7 @@ dependencyManagement {
 }
 
 tasks.named('bootRun') {
+    optimizedLaunch = false
     jvmArgs('--add-modules', 'jdk.incubator.vector')
 }
 

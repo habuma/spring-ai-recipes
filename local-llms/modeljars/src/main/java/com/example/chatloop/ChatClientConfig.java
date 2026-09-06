@@ -20,7 +20,7 @@ public class ChatClientConfig {
 
   @Bean
   ChatClient.Builder chatClientBuilder(ObjectProvider<ChatClientBuilderCustomizer> customizers) {
-    var defaults = SamplingOptions.builder().temperature(0).maxTokens(128).build();
+    var defaults = SamplingOptions.builder().build();
     var loadOptions = ModelLoadOptions.builder().backend(ModelBackend.JAVA).build();
 
     var runtime = ModelJars.openRuntime(MODEL, loadOptions);
