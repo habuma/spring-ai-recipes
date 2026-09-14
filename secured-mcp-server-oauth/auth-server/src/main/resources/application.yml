@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: recipes-authorization-server
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          default-client:
+            token:
+              access-token-time-to-live: 1h
+            registration:
+              client-id: "myclient"
+              client-secret: "{noop}mysecret"
+              client-authentication-methods:
+                - "client_secret_basic"
+                - "none"
+              authorization-grant-types:
+                - "authorization_code"
+                - "client_credentials"
+              redirect-uris:
+                - "http://localhost:6274/oauth/callback"
+                - "http://127.0.0.1:6274/oauth/callback"
+              scopes:
+                - general-access
+                - meteorology
+                - administration
+    user:
+      name: craig
+      password: letmein
+      roles: ADMIN
+
+server:
+  port: 9999
