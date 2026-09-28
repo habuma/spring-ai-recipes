@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: mcp-client
+  main:
+    web-application-type: none
+  ai:
+    mcp:
+      client:
+       stdio:
+         root-change-notification: false
+         connections:
+           weathermcp:
+            #  command: 'jbang'
+             command: '/Users/habuma/Projects/spring-ai-recipes/jbang-mcp/mcp-server/StdioMcpServerApplication.java'
+            #  args:
+            #    - '/Users/habuma/Projects/spring-ai-recipes/jbang-mcp/mcp-server/StdioMcpServerApplication.java'
+            #    - '--logging.level.root=ERROR'
+            #    - '--spring.main.banner-mode=off'
