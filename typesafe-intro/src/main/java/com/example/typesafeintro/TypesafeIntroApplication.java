@@ -1,11 +1,6 @@
 package com.example.typesafeintro;
 
 import org.springaicommunity.typesafe.TypeSafeClient;
-import org.springaicommunity.typesafe.question.Choice;
-import org.springaicommunity.typesafe.question.Noul;
-import org.springaicommunity.typesafe.question.Score;
-import org.springaicommunity.typesafe.question.SystemOneRequest;
-import org.springaicommunity.typesafe.response.SystemOneResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +24,6 @@ public class TypesafeIntroApplication {
   @Bean
   ApplicationRunner go(GameJudger gameJudger) {
     return args -> {
-      var startTime = System.nanoTime();
       for (Game game : GamesCollection.GAMES) {
         var judgment = gameJudger.judgeGame(game);
         System.out.println(" - " + game.title());
@@ -38,11 +32,6 @@ public class TypesafeIntroApplication {
         System.out.println("   Learning difficulty: " + judgment.learningDifficulty());
         System.out.println();
       }
-
-      var endTime = System.nanoTime();
-      var totalTime = (endTime - startTime);
-      System.err.println("Game judgement in " + totalTime + " nanoseconds");
-      System.err.println(" In milliseconds: " + totalTime / 1000000);
     };
   }
 
