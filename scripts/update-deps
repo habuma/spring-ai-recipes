@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""Update dependency/plugin versions in build.gradle files, then run
+`./gradlew clean build` in each changed project. A project whose build fails
+is rolled back to its original build.gradle (unless --keep-failed).
+
+Usage: scripts/update-deps [project-folder] [--no-major] [--dry-run] [--keep-failed]
+  project-folder: e.g. chatloop, mcp-elicitation/mcp-server, or a group folder
+                  such as mcp-elicitation (all its subprojects). Omit for all.
+"""
+import argparse
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import gradledeps as g
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("project", nargs="?", help="folder name/path; omit for all projects")
+    ap.add_argument("--no-major", action="store_true", help="skip major-version bumps")
+    ap.add_argument("--dry-run", action="store_true", help="show changes without editing or building")
+    ap.add_argument("--keep-failed", action="store_true", help="leave edits in place when the build fails")
+    args = ap.parse_args()
+
+    projects = g.resolve_projects(args.project)
+    if not projects:
+        g.err(f"No Gradle project matches '{args.project}'")
+        return 2
+
+    logdir = Path(tempfile.mkdtemp(prefix="update-deps-"))
+    results = []  # (project, status)
+    for p in projects:
+        name = g.rel(p)
+        updates, _ = g.find_updates(p, allow_major=not args.no_major)
+        if not updates:
+            results.append((name, "up to date"))
+            continue
+        print(f"\n== {name}")
+        for ref, latest, kind in updates:
+            print(f"  {ref.label}: {ref.current} -> {latest}")
+        if args.dry_run:
+            results.append((name, "would update"))
+            continue
+
+        originals = g.apply_updates(updates)
+        log = logdir / (name.replace("/", "__") + ".log")
+        print(f"  building (log: {log}) ...", flush=True)
+        with open(log, "w") as fh:
+            rc = subprocess.run(["./gradlew", "clean", "build", "--console=plain"], cwd=p,
+                                stdout=fh, stderr=subprocess.STDOUT).returncode
+        if rc == 0:
+            print("  BUILD OK")
+            results.append((name, "updated, build OK"))
+        elif args.keep_failed:
+            print("  BUILD FAILED (changes kept)")
+            results.append((name, f"updated, BUILD FAILED (changes kept) - {log}"))
+        else:
+            for f, text in originals.items():
+                f.write_text(text)
+            print("  BUILD FAILED (changes rolled back)")
+            results.append((name, f"BUILD FAILED, rolled back - {log}"))
+
+    print("\n==== Summary ====")
+    for name, status in results:
+        if status != "up to date":
+            print(f"  {name}: {status}")
+    ok = sum("build OK" in s for _, s in results)
+    bad = sum("FAILED" in s for _, s in results)
+    print(f"{ok} updated and built, {bad} failed, "
+          f"{sum(s == 'up to date' for _, s in results)} already up to date.")
+    return 1 if bad else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,1 +1,32 @@
 buildall.sh
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# Claude Code local files
+.claude/
+
+# Gradle / build output
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Node
+node_modules/
+dist/
+
+# Logs and env
+*.log
+.env
+.env.*
+!.env.example
+
+# Spring Boot generated
+HELP.md

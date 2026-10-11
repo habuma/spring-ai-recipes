@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Report, per project, which dependencies/plugins have newer versions.
+
+Usage: scripts/check-updates [project-folder] [--no-major]
+"""
+import argparse
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import gradledeps as g
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("project", nargs="?", help="folder name/path; omit for all projects")
+    ap.add_argument("--no-major", action="store_true", help="hide major-version bumps")
+    args = ap.parse_args()
+
+    projects = g.resolve_projects(args.project)
+    if not projects:
+        g.err(f"No Gradle project matches '{args.project}'")
+        return 2
+
+    total = 0
+    for p in projects:
+        updates, failures = g.find_updates(p, allow_major=not args.no_major)
+        if not updates and not failures:
+            continue
+        print(f"\n{g.rel(p)}")
+        for ref, latest, kind in updates:
+            tag = " (MAJOR)" if kind == "major" else ""
+            print(f"  {ref.label}: {ref.current} -> {latest}{tag}")
+        for ref in failures:
+            print(f"  {ref.label}: {ref.current} (could not look up versions)")
+        total += len(updates)
+    print(f"\n{total} update(s) available across {len(projects)} project(s).")
+    return 1 if total else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
