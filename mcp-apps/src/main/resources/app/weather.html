@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current Weather</title>
+    <style>
+        :root {
+            --text: #0f172a;
+            --muted: #475569;
+            --chip: rgba(255, 255, 255, 0.55);
+            --sky-top: #7dd3fc;
+            --sky-bottom: #e0f2fe;
+            --sun: #fbbf24;
+            --cloud: #ffffff;
+            --cloud-shade: #cbd5e1;
+            --rain: #2563eb;
+            --bolt: #f59e0b;
+            --snow: #ffffff;
+        }
+        :root[data-mood="rain"]  { --sky-top: #64748b; --sky-bottom: #cbd5e1; }
+        :root[data-mood="storm"] { --sky-top: #334155; --sky-bottom: #94a3b8; --text: #f8fafc; --muted: #e2e8f0; --chip: rgba(15, 23, 42, 0.35); }
+        :root[data-mood="snow"]  { --sky-top: #bae6fd; --sky-bottom: #f1f5f9; }
+        :root[data-mood="cloud"] { --sky-top: #94a3b8; --sky-bottom: #e2e8f0; }
+        :root[data-mood="fog"]   { --sky-top: #cbd5e1; --sky-bottom: #f1f5f9; }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #f8fafc;
+                --muted: #cbd5e1;
+                --chip: rgba(15, 23, 42, 0.35);
+                --sky-top: #1e3a8a;
+                --sky-bottom: #3b82f6;
+                --cloud: #e2e8f0;
+                --cloud-shade: #94a3b8;
+            }
+            :root[data-mood="rain"]  { --sky-top: #1e293b; --sky-bottom: #475569; }
+            :root[data-mood="storm"] { --sky-top: #0f172a; --sky-bottom: #334155; }
+            :root[data-mood="snow"]  { --sky-top: #334155; --sky-bottom: #64748b; }
+            :root[data-mood="cloud"] { --sky-top: #334155; --sky-bottom: #64748b; }
+            :root[data-mood="fog"]   { --sky-top: #475569; --sky-bottom: #94a3b8; }
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            background: transparent;
+        }
+        .card {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 24px;
+            border-radius: 20px;
+            background: linear-gradient(160deg, var(--sky-top), var(--sky-bottom));
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: background 0.4s;
+        }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .zip {
+            font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em;
+            padding: 4px 12px; border-radius: 999px; background: var(--chip);
+        }
+        .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .main { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 8px; }
+        .temp { font-size: 4.5rem; font-weight: 200; line-height: 1; }
+        .temp sup { font-size: 1.75rem; font-weight: 400; vertical-align: top; position: relative; top: 0.6rem; }
+        .icon { width: 120px; height: 120px; flex: none; }
+        .conditions { margin-top: 12px; font-size: 1.15rem; font-weight: 500; }
+        .status { text-align: center; color: var(--muted); padding: 24px 0; }
+
+        .spin { transform-origin: 60px 60px; animation: spin 24s linear infinite; }
+        .drop { animation: fall 1s linear infinite; }
+        .drop:nth-child(2) { animation-delay: .3s; }
+        .drop:nth-child(3) { animation-delay: .6s; }
+        .flake { animation: fall 2.4s linear infinite; }
+        .flake:nth-child(2) { animation-delay: .8s; }
+        .flake:nth-child(3) { animation-delay: 1.6s; }
+        .flash { animation: flash 2s steps(1) infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes fall { from { transform: translateY(-6px); opacity: 0; } 30% { opacity: 1; } to { transform: translateY(14px); opacity: 0; } }
+        @keyframes flash { 0%, 60%, 100% { opacity: 1; } 65%, 75% { opacity: .2; } }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+    </style>
+</head>
+<body>
+<div class="card" id="card">
+    <div class="status" id="status">Loading weather…</div>
+</div>
+
+<script type="module">
+    import { App } from "https://unpkg.com/@modelcontextprotocol/ext-apps@2.0.3/app-with-deps";
+
+    const CLOUD = `<path d="M30 88a18 18 0 0 1 2-35.9A26 26 0 0 1 82 48a20 20 0 0 1 4 40z" fill="var(--cloud)" stroke="var(--cloud-shade)" stroke-width="2"/>`;
+    const SUN = (cx, cy, r) => `
+        <g class="spin">
+            ${[...Array(8)].map((_, i) => `<line x1="60" y1="${cy - r - 10}" x2="60" y2="${cy - r - 20}" stroke="var(--sun)" stroke-width="5" stroke-linecap="round" transform="rotate(${i * 45} ${cx} ${cy})"/>`).join("")}
+        </g>
+        <circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--sun)"/>`;
+    const DROPS = `<g stroke="var(--rain)" stroke-width="4" stroke-linecap="round">
+        <line class="drop" x1="38" y1="94" x2="34" y2="104"/><line class="drop" x1="58" y1="94" x2="54" y2="104"/><line class="drop" x1="78" y1="94" x2="74" y2="104"/></g>`;
+    const FLAKES = `<g fill="var(--snow)" stroke="var(--cloud-shade)">
+        <circle class="flake" cx="38" cy="98" r="3.5"/><circle class="flake" cx="58" cy="98" r="3.5"/><circle class="flake" cx="78" cy="98" r="3.5"/></g>`;
+    const BOLT = `<polygon class="flash" points="64,70 50,96 60,96 54,114 74,88 63,88 70,70" fill="var(--bolt)"/>`;
+    const FOG = `<g stroke="var(--cloud-shade)" stroke-width="5" stroke-linecap="round">
+        <line x1="22" y1="92" x2="98" y2="92"/><line x1="32" y1="104" x2="88" y2="104"/></g>`;
+
+    // Pick a scene from free-form conditions text (e.g. "Raining cats and dogs").
+    function scene(conditions) {
+        const c = (conditions || "").toLowerCase();
+        if (/thunder|storm|lightning/.test(c))
+            return { mood: "storm", svg: `<g transform="translate(0,-14)">${CLOUD}</g>${BOLT}` };
+        if (/rain|shower|drizzle|cats and dogs|pour/.test(c))
+            return { mood: "rain", svg: `<g transform="translate(0,-14)">${CLOUD}</g>${DROPS}` };
+        if (/snow|sleet|flurr|blizzard|ice/.test(c))
+            return { mood: "snow", svg: `<g transform="translate(0,-14)">${CLOUD}</g>${FLAKES}` };
+        if (/fog|mist|haze|smoke/.test(c))
+            return { mood: "fog", svg: `<g transform="translate(0,-14)">${CLOUD}</g>${FOG}` };
+        if (/partly|mostly sunny|few clouds|scattered/.test(c))
+            return { mood: "clear", svg: `<g transform="translate(-14,-14) scale(.8)">${SUN(75, 55, 18)}</g><g transform="translate(8,6)">${CLOUD}</g>` };
+        if (/cloud|overcast|gray|grey/.test(c))
+            return { mood: "cloud", svg: `<g transform="translate(0,-6)">${CLOUD}</g>` };
+        return { mood: "clear", svg: SUN(60, 60, 24) };
+    }
+
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+
+    // "78F", "78°F", "21 C" -> { value: "78", unit: "F" }
+    function parseTemp(t) {
+        const m = String(t ?? "").match(/(-?\d+(?:\.\d+)?)\s*°?\s*([A-Za-z])?/);
+        return m ? { value: m[1], unit: (m[2] || "F").toUpperCase() } : { value: esc(t), unit: "" };
+    }
+
+    function render(w) {
+        const { mood, svg } = scene(w.conditions);
+        const t = parseTemp(w.temperature);
+        document.documentElement.dataset.mood = mood;
+        document.getElementById("card").innerHTML = `
+            <div class="header">
+                <span class="label">Current weather</span>
+                <span class="zip">${esc(w.zipcode)}</span>
+            </div>
+            <div class="main">
+                <div class="temp">${esc(t.value)}<sup>°${esc(t.unit)}</sup></div>
+                <svg class="icon" viewBox="0 0 120 120" role="img" aria-label="${esc(w.conditions)}">${svg}</svg>
+            </div>
+            <div class="conditions">${esc(w.conditions)}</div>`;
+    }
+
+    // The tool result arrives as structuredContent, or as JSON text content.
+    function extract(result) {
+        if (result?.structuredContent) return result.structuredContent;
+        const text = result?.content?.find((c) => c.type === "text")?.text;
+        try { return text ? JSON.parse(text) : null; } catch { return null; }
+    }
+
+    const app = new App({ name: "weather", version: "1.0.0" });
+
+    // Register handlers before connecting so the initial result isn't missed.
+    app.ontoolresult = (result) => {
+        const weather = extract(result);
+        if (weather) render(weather);
+        else document.getElementById("status").textContent = "No weather data available.";
+    };
+
+    await app.connect();
+</script>
+</body>
+</html>
