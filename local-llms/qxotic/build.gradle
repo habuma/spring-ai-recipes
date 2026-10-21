@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.1.1'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'local-llms-qxotic'
+
+
+tasks.named('bootRun') {
+    standardInput = System.in
+}
+
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springAiVersion', "2.0.1")
+    set('qxoticVersion', "0.3.1")
+}
+
+dependencies {
+    // Essential Spring AI dependencies needed
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.ai:spring-ai-client-chat'
+
+    // Qxotic dependencies
+    implementation("com.qxotic:jinfer-spring-ai")
+    implementation("com.qxotic:jinfer-spring-ai-autoconfigure")
+    implementation("com.qxotic:jinfer-models-all")
+
+    implementation("com.qxotic:jam-native")
+    implementation("com.qxotic:jam-vector")
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
+        mavenBom "com.qxotic:jinfer-bom:${qxoticVersion}"
+    }
+}
+
+tasks.named('bootRun') {
+    optimizedLaunch = false
+    jvmArgs('--add-modules', 'jdk.incubator.vector')
+}
+
+tasks.named('test') {
+    jvmArgs('--add-modules', 'jdk.incubator.vector')
+    useJUnitPlatform()
+}
