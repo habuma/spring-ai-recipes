@@ -35,8 +35,7 @@ dependencies {
     implementation 'org.springframework.ai:spring-ai-client-chat'
 
     // Qxotic dependencies
-    implementation("com.qxotic:jinfer-spring-ai")
-    implementation("com.qxotic:jinfer-spring-ai-autoconfigure")
+    implementation("com.qxotic:jinfer-spring-ai-spring-boot-starter")
     implementation("com.qxotic:jinfer-models-all")
 
     implementation("com.qxotic:jam-native")
