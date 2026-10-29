@@ -14,6 +14,8 @@ are folders that contain a project per subfolder.
 | --- | --- |
 | [`a2a-client`](a2a-client/) | [Invoking A2A Sub-Agents with TaskTool](https://thetalkingapp.medium.com/spring-ai-recipe-invoking-a2a-sub-agents-with-tasktool-e4f1a4b92b5f) |
 | [`a2a-server`](a2a-server/) | [Enabling Agent-to-Agent Communication with A2A](https://thetalkingapp.medium.com/spring-ai-recipe-enabling-agent-to-agent-communication-with-a2a-2cdd97794a6f) |
+| [`ag-ui`](ag-ui/) | [Adding a Web UI with AG-UI and CopilotKit](https://thetalkingapp.medium.com/spring-ai-recipe-adding-a-web-ui-with-ag-ui-and-copilotkit-4922d6a0b441) |
+| [`ag-ui-mcp-apps`](ag-ui-mcp-apps/) | [Rendering MCP Apps UIs in an AG-UI/CopilotKit Client](https://medium.com/@thetalkingapp/spring-ai-recipe-rendering-mcp-apps-uis-in-an-ag-ui-copilotkit-client-2e8745e66579) |
 | [`ask-user-question`](ask-user-question/) | [Asking Questions to the User](https://thetalkingapp.medium.com/spring-ai-recipe-asking-questions-to-the-user-99ec1a0e2394) |
 | [`chatclient-and-react`](chatclient-and-react/) | [Reasoning and Acting (ReAct)](https://medium.com/@thetalkingapp/spring-ai-recipe-reasoning-and-acting-react-30d364955c2f) |
 | [`chatclientcustomizer`](chatclientcustomizer/) | [Composing ChatClient Behavior](https://thetalkingapp.medium.com/spring-ai-recipe-composing-chatclient-behavior-5f643e727781) |
@@ -35,12 +37,15 @@ are folders that contain a project per subfolder.
 | [`hyde-rag`](hyde-rag/) | [Better RAG Results with HyDE](https://medium.com/@thetalkingapp/spring-ai-recipe-better-rag-results-with-hyde-1d2d360a1b58) |
 | [`jbang-chat-loop`](jbang-chat-loop/) | [A No-Build Chat Loop with JBang](https://medium.com/@thetalkingapp/spring-ai-recipe-a-no-build-chat-loop-with-jbang-36cee6039980) |
 | [`jbang-mcp`](jbang-mcp/) | [No-Build MCP with JBang](https://medium.com/@thetalkingapp/spring-ai-recipe-no-build-mcp-with-jbang-8b26ce148cf1) |
+| [`local-embeddings`](local-embeddings/) | [Speeding up RAG with Faster Embeddings](https://medium.com/@thetalkingapp/spring-ai-recipe-speeding-up-rag-with-faster-embeddings-952bcc242b0e) |
 | [`local-llms/dockermodelrunner`](local-llms/dockermodelrunner/) | [Running Against Local LLMs](https://medium.com/@thetalkingapp/spring-ai-recipe-running-against-local-llms-3b7af32f035b) |
 | [`local-llms/lmstudio`](local-llms/lmstudio/) | [Running Against Local LLMs](https://medium.com/@thetalkingapp/spring-ai-recipe-running-against-local-llms-3b7af32f035b) |
 | [`local-llms/modeljars`](local-llms/modeljars/) | [Running Against an in-JVM Model](https://medium.com/@thetalkingapp/spring-ai-recipe-running-against-an-in-jvm-model-70311a054eaf) |
 | [`local-llms/ollama`](local-llms/ollama/) | [Running Against Local LLMs](https://medium.com/@thetalkingapp/spring-ai-recipe-running-against-local-llms-3b7af32f035b) |
+| [`local-llms/qxotic`](local-llms/qxotic/) | [Running LLMs in the JVM with Qxotic](https://medium.com/@thetalkingapp/spring-ai-recipe-running-llms-in-the-jvm-with-qxotic-b9a8c4405e88) |
 | [`logging-requests-and-responses`](logging-requests-and-responses/) | [Logging LLM Requests and Responses](https://thetalkingapp.medium.com/spring-ai-recipe-logging-llm-requests-and-responses-c1adfba50082) |
 | [`longterm-memory`](longterm-memory/) | [Enabling Long-Term Memory](https://thetalkingapp.medium.com/spring-ai-recipe-enabling-long-term-memory-49186aa60cb0) |
+| [`mcp-apps`](mcp-apps/) | [Rendering Rich UIs with MCP Apps](https://thetalkingapp.medium.com/spring-ai-recipe-rendering-rich-uis-with-mcp-apps-fd72569c11de) |
 | [`mcp-client`](mcp-client/) | [Creating an MCP Client](https://thetalkingapp.medium.com/spring-ai-recipe-creating-an-mcp-client-9691ddc42dfd) |
 | [`mcp-elicitation`](mcp-elicitation/) | [MCP Elicitation](https://medium.com/@thetalkingapp/spring-ai-recipe-mcp-elicitation-cdfed4dd213e) |
 | [`mcp-logging`](mcp-logging/) | [MCP Logging](https://medium.com/@thetalkingapp/spring-ai-recipe-mcp-logging-f7ad3041a249) |
