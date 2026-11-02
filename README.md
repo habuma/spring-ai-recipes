@@ -33,6 +33,7 @@ are folders that contain a project per subfolder.
 | [`graph-workflow-hitl`](graph-workflow-hitl/) | [Adding Human-in-the-Loop to a Graph-based Agentic Workflow](https://thetalkingapp.medium.com/spring-ai-recipe-adding-human-in-the-loop-to-a-graph-based-agentic-workflow-4a826cf89902) |
 | [`graph-workflow-langgraph4j`](graph-workflow-langgraph4j/) | [Building a Graph-Based Agentic Workflow with LangGraph4j](https://medium.com/@thetalkingapp/spring-ai-recipe-building-a-graph-based-agentic-workflow-with-langgraph4j-0fbfcce25a57) |
 | [`graph-workflow-loop`](graph-workflow-loop/) | [Adding a Loop to a Graph-Based Workflow](https://thetalkingapp.medium.com/spring-ai-recipe-adding-a-loop-to-a-graph-based-workflow-e062040e0440), [Visualizing Spring AI Alibaba Graph Workflows](https://medium.com/@thetalkingapp/spring-ai-recipe-visualizing-spring-ai-alibaba-graph-workflows-7784465d2afc) |
+| [`hosted-tools-code-interpreter`](hosted-tools-code-interpreter/) | [Running Python with Hosted Code Interpreter](https://medium.com/@thetalkingapp/spring-ai-recipe-running-python-with-hosted-code-interpreter-2c317794e5c2) |
 | [`hybrid-rag`](hybrid-rag/) | [Better RAG Results with Hybrid Search](https://thetalkingapp.medium.com/spring-ai-recipe-better-rag-results-with-hybrid-search-6e6ab2d09003) |
 | [`hyde-rag`](hyde-rag/) | [Better RAG Results with HyDE](https://medium.com/@thetalkingapp/spring-ai-recipe-better-rag-results-with-hyde-1d2d360a1b58) |
 | [`jbang-chat-loop`](jbang-chat-loop/) | [A No-Build Chat Loop with JBang](https://medium.com/@thetalkingapp/spring-ai-recipe-a-no-build-chat-loop-with-jbang-36cee6039980) |
@@ -62,6 +63,7 @@ are folders that contain a project per subfolder.
 | [`persistent-chat-memory/redis-memory`](persistent-chat-memory/redis-memory/) | [3 More Ways to Persist Chat Memory](https://medium.com/@thetalkingapp/spring-ai-recipe-3-more-ways-to-persist-chat-memory-289cfb995495) |
 | [`rag-with-metadata`](rag-with-metadata/) | [Filtering RAG Results with Metadata](https://medium.com/@thetalkingapp/spring-ai-recipe-filtering-rag-results-with-metadata-bef2f8a7cb72) |
 | [`rerank-rag`](rerank-rag/) | [Better RAG Results with Reranking](https://medium.com/@thetalkingapp/spring-ai-recipe-better-rag-results-with-reranking-37c76fb325da) |
+| [`responses-api`](responses-api/) | [Switching to the OpenAI Responses API](https://medium.com/@thetalkingapp/spring-ai-recipe-switching-to-the-openai-responses-api-a845d8f842e1) |
 | [`safeguard-advisor`](safeguard-advisor/) | [Applying Input Guardrails with SafeGuardAdvisor](https://medium.com/@thetalkingapp/spring-ai-recipe-applying-input-guardrails-with-safeguardadvisor-6177541fb22f) |
 | [`secured-mcp-server-api-key`](secured-mcp-server-api-key/) | [Securing an MCP Server with an API Key](https://thetalkingapp.medium.com/spring-ai-recipe-securing-an-mcp-server-with-an-api-key-0a4b84fdf0dc) |
 | [`secured-mcp-server-oauth`](secured-mcp-server-oauth/) | [Securing an MCP Server with OAuth](https://thetalkingapp.medium.com/spring-ai-recipe-securing-an-mcp-server-with-oauth-01496ca9e17e) |
