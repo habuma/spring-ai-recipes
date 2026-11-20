@@ -10,6 +10,10 @@ Each project is a standalone Gradle build (`./gradlew bootRun`, or `./gradlew bu
 Some recipes span several projects (for example, a client and a server); these
 are folders that contain a project per subfolder.
 
+To run the tests of every project at once, use `scripts/runtests.sh` (optionally pass
+name filters such as `scripts/runtests.sh mcp rag`, or `--clean` / `--parallel N`).
+It prints a pass/fail summary; tests needing Docker are skipped if it isn't running.
+
 | Project | Recipe |
 | --- | --- |
 | [`a2a-client`](a2a-client/) | [Invoking A2A Sub-Agents with TaskTool](https://thetalkingapp.medium.com/spring-ai-recipe-invoking-a2a-sub-agents-with-tasktool-e4f1a4b92b5f) |

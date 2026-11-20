@@ -66,6 +66,7 @@ public class FactCheckingEvaluatorLearningTests {
   }
 
   @Test
+  @Disabled("hits the live API")
   void evaluateThreeDecomposedClaims() {
     var jevJudge = JevJudge.builder(typeSafeClient)
         .noul("is_grounded", Noul.builder()
@@ -93,6 +94,7 @@ public class FactCheckingEvaluatorLearningTests {
   }
 
   @Test
+  @Disabled("hits the live API")
   void decomposedClaimsSpringAiWorkshopEvaluation() {
     var claimsDecomposer = new ClaimsDecomposer(chatModel);
     var jevJudge = JevJudge.builder(typeSafeClient)
