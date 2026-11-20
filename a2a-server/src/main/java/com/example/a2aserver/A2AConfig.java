@@ -1,9 +1,11 @@
 package com.example.a2aserver;
 
-import io.a2a.server.agentexecution.AgentExecutor;
-import io.a2a.spec.AgentCapabilities;
-import io.a2a.spec.AgentCard;
-import io.a2a.spec.AgentSkill;
+import org.a2aproject.sdk.server.agentexecution.AgentExecutor;
+import org.a2aproject.sdk.spec.AgentCapabilities;
+import org.a2aproject.sdk.spec.AgentCard;
+import org.a2aproject.sdk.spec.AgentInterface;
+import org.a2aproject.sdk.spec.AgentSkill;
+import org.a2aproject.sdk.spec.TransportProtocol;
 import org.springaicommunity.a2a.server.executor.DefaultAgentExecutor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,19 +30,20 @@ public class A2AConfig {
   public AgentCard agentCard(
       @Value("${server.host:localhost}") String host,
       @Value("${server.port:8080}") int port) {
-    return new AgentCard.Builder()
+    return AgentCard.builder()
         .name("My Weather Agent")
         .description("Provides weather information for a location")
-        .url("http://" + host + ":" + port + "/a2a/")
         .version("1.2.3")
-        .capabilities(new AgentCapabilities.Builder().streaming(false).build())
+        .capabilities(AgentCapabilities.builder().streaming(false).build())
         .defaultInputModes(List.of("text"))
         .defaultOutputModes(List.of("text"))
-        .skills(List.of(new AgentSkill.Builder()
+        .skills(List.of(AgentSkill.builder()
             .id("my_agent").name("My Weather Agent")
             .description("Provides weather information for a location")
             .tags(List.of("weather")).build()))
-        .protocolVersion("0.3.0")
+        .supportedInterfaces(List.of(new AgentInterface(
+            TransportProtocol.JSONRPC.asString(),
+            "http://" + host + ":" + port + "/a2a/")))
         .build();
   }
 

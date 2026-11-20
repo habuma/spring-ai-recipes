@@ -1,6 +1,6 @@
 package com.example.a2aserver;
 
-import io.a2a.spec.AgentCard;
+import org.a2aproject.sdk.spec.AgentCard;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -74,6 +74,8 @@ class A2aServerTests {
 
     assertThat(response.statusCode()).isEqualTo(200);
     assertThat(response.body()).contains("My Weather Agent");
+    assertThat(response.body()).contains("supportedInterfaces").contains("JSONRPC")
+        .contains("/a2a/");
   }
 
   @Test

@@ -7,7 +7,6 @@ import org.springframework.ai.vectorstore.redis.cache.semantic.DefaultSemanticCa
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import redis.clients.jedis.JedisPooled;
 import redis.clients.jedis.RedisClient;
 
 @Configuration
@@ -39,6 +38,9 @@ public class SemanticCacheConfig {
   SemanticCacheAdvisor semanticCacheAdvisor(SemanticCache semanticCache) {
     return SemanticCacheAdvisor.builder()
         .cache(semanticCache)
+        // The scope isolates cached responses. This demo shares one cache across all
+        // requests; a multi-user app should return a tenant or user id instead.
+        .scopeResolver(request -> "shared")
         .build();
   }
 

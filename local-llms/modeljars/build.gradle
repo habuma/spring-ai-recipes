@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.1.0'
+    id 'org.springframework.boot' version '4.2.0'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -25,7 +25,7 @@ repositories {
 }
 
 ext {
-    set('springAiVersion', "2.0.1")
+    set('springAiVersion', "2.1.0")
 }
 
 dependencies {
@@ -34,8 +34,8 @@ dependencies {
     implementation 'org.springframework.ai:spring-ai-client-chat'
 
     // Models/ModelJars dependencies
-    implementation("org.modeljars:modeljars:0.1.31")
-    implementation("com.integrallis:models-spring-ai:0.3.26")
+    implementation("org.modeljars:modeljars:0.1.80")
+    implementation("com.integrallis:models-spring-ai:0.5.22")
     implementation('org.modeljars.huggingface:qwen.qwen3-1.7b-gguf.q8_0:3.0.0-q8_0.2')
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

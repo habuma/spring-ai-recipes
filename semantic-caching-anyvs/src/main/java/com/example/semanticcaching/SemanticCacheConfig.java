@@ -42,6 +42,9 @@ public class SemanticCacheConfig {
   SemanticCacheAdvisor semanticCacheAdvisor(SemanticCache semanticCache) {
     return SemanticCacheAdvisor.builder()
         .cache(semanticCache)
+        // The scope isolates cached responses. This demo shares one cache across all
+        // requests; a multi-user app should return a tenant or user id instead.
+        .scopeResolver(request -> "shared")
         .build();
   }
 

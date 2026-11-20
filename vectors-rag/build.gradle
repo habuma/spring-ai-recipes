@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.1.0'
+    id 'org.springframework.boot' version '4.2.0'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -23,14 +23,14 @@ repositories {
 }
 
 ext {
-    set('springAiVersion', "2.0.1")
+    set('springAiVersion', "2.1.0")
 }
 
 dependencies {
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
-    implementation 'com.integrallis:vectors-spring-boot-starter:0.1.4'
+    implementation 'com.integrallis:vectors-spring-boot-starter:0.1.43'
 
     implementation 'org.springframework.ai:spring-ai-vector-store-advisor'
     implementation 'org.springframework.ai:spring-ai-tika-document-reader'
