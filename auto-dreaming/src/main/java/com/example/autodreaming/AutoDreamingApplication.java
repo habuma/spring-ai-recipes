@@ -1,7 +1,7 @@
 package com.example.autodreaming;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.session.advisor.SessionAdvisors;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -42,7 +42,7 @@ public class AutoDreamingApplication {
 
           System.out.println("\n - " +
               chatClient.prompt(input)
-                  .advisors(spec -> spec.param(ChatMemory.CONVERSATION_ID, "DEMO"))
+                  .advisors(SessionAdvisors.session("DEMO"))
                   .call()
                   .content());
         }
