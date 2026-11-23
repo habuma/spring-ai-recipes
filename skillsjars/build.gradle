@@ -28,7 +28,7 @@ ext {
 
 dependencies {
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
-    implementation 'org.springaicommunity:spring-ai-agent-utils:0.13.0'
+    implementation 'org.springaicommunity:spring-ai-agent-utils:0.14.0'
     implementation 'com.skillsjars:anthropics__skills__pdf:2026_02_25-3d59511'
     runtimeOnly("com.skillsjars:browser-use__browser-use__remote-browser:2026_02_23-1d154e1")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -28,8 +28,8 @@ ext {
 
 dependencies {
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
-    implementation 'org.springaicommunity:spring-ai-agent-utils:0.13.0'
-    implementation 'org.springaicommunity:spring-ai-agent-utils-a2a:0.13.0'
+    implementation 'org.springaicommunity:spring-ai-agent-utils:0.14.0'
+    implementation 'org.springaicommunity:spring-ai-agent-utils-a2a:0.14.0'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

@@ -29,7 +29,7 @@ ext {
 dependencies {
     implementation 'org.springframework.ai:spring-ai-starter-model-openai'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-    implementation 'org.springaicommunity:spring-ai-agent-utils:0.13.0'
+    implementation 'org.springaicommunity:spring-ai-agent-utils:0.14.0'
 
     implementation 'org.zalando:logbook-spring-boot-starter:4.2.0'
 
