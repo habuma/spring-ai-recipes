@@ -2,8 +2,10 @@ package com.example.qxoticvoicechat;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.ChatClientBuilderCustomizer;
-import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
-import org.springframework.ai.chat.memory.MessageWindowChatMemory;
+import org.springframework.ai.session.InMemorySessionRepository;
+import org.springframework.ai.session.SessionRepository;
+import org.springframework.ai.session.SessionService;
+import org.springframework.ai.session.advisor.SessionAdvisors;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,20 +13,19 @@ import org.springframework.context.annotation.Configuration;
 public class ChatClientConfig {
 
   @Bean
-  ChatClient chatClient(ChatClient.Builder chatClientBuilder) {
+    ChatClient chatClient(ChatClient.Builder chatClientBuilder) {
     return chatClientBuilder.build();
   }
 
   @Bean
-  ChatClientBuilderCustomizer chatMemoryCustomizer() {
-    return builder -> {
-      builder.defaultAdvisors(
-          MessageChatMemoryAdvisor.builder(
-                  MessageWindowChatMemory.builder()
-                      .maxMessages(500)
-                      .build())
-              .build());
-    };
+  SessionRepository sessionRepository() {
+    return InMemorySessionRepository.builder().build();
+  }
+
+  @Bean
+  ChatClientBuilderCustomizer chatMemoryCustomizer(SessionService sessionService) {
+    return builder -> builder
+        .defaultAdvisors(SessionAdvisors.builder(sessionService).build());
   }
 
 }

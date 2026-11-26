@@ -2,6 +2,7 @@ package com.example.qxoticvoicechat;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.session.advisor.SessionAdvisors;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -43,7 +44,7 @@ public class QxoticVoiceChatApplication {
           }
 
           var answer = chatClient.prompt(input)
-              .advisors(spec -> spec.param(ChatMemory.CONVERSATION_ID, "DEMO"))
+              .advisors(SessionAdvisors.session("DEMO"))
               .call()
               .content();
           System.out.println("\n - " + answer);
